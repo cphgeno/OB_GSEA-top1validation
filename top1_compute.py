@@ -13,7 +13,6 @@ parser.add_argument('--output_dir', type=str, help='Output directory')
 parser.add_argument('--name', type=str, help='Dataset name')
 parser.add_argument('--preprocessing.meta', type=str, help='Preprocessed metadata')
 parser.add_argument('--ScoringTools.fullNES', type=str, help='Tools output collector')
-parser.add_argument('--input_type', type=str, help='Tools of origin for input to the script for metrics computation')
 
 args, _ = parser.parse_known_args()
 
@@ -49,7 +48,7 @@ filepath_split = input_filepath.split("/")
 module = filepath_split[-3]
 parameter = filepath_split[-2]
 
-if module == 'gsvaalone':
+if module == 'gsva':
     module = methods_connect_dict[parameter]
 
 if parameter != "default":
